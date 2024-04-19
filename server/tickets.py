@@ -21,7 +21,7 @@ class Tickets(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     status = db.Column(db.Enum(TicketStatus), default=TicketStatus.OPEN)
     priority = db.Column(db.Enum(PriorityLevel), default=PriorityLevel.LOW)
-    deadline = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    deadline = db.Column(db.DateTime, nullable=False)
     assign_to = db.Column(db.Integer, db.ForeignKey('admin.id'))
     client_id = db.Column(db.Integer, db.ForeignKey('clients.id'))
     comments = db.Column(db.String, nullable=False)

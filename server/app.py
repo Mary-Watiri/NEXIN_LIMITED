@@ -7,6 +7,7 @@ from endpoints.client_api import clients
 from endpoints.tickets_api import tickets
 from endpoints.admin_api import admin
 from endpoints.auth_api import check_login, login, logout
+from models import Tickets
 
 
 app = Flask(__name__)
@@ -80,12 +81,33 @@ def protected():
 def index():
     return '<h3>Nexin LTD</h3>'
 
+@app.route('/tickets/<int:ticket_id>', methods=['GET','DELETE','PATCH','POST'])
+def get_ticket(ticket_id):
+    ticket = Tickets.query.get(ticket_id)
+    if ticket:
+        ticket_data = {
+            'id': ticket.id,
+            'status': ticket.status.value,
+            'priority': ticket.priority.value,
+            'deadline': ticket.deadline,
+            'assign_to': ticket.assign_to,
+            'client_id': ticket.client_id,
+            'comments': ticket.comments
+        }
+        return jsonify(ticket_data)
+    else:
+        return jsonify({'error': 'Ticket not found'}), 404
+
 app.add_url_rule('/login', 'login', login, methods=['GET', 'POST'])
 app.add_url_rule('/logout', 'logout', logout, methods=['GET', 'POST'])
 app.add_url_rule('/check_login', 'check_login', check_login, methods=['GET', 'POST'])
 app.add_url_rule('/admin', 'admin', admin, methods=['GET', 'POST'])
 app.add_url_rule('/clients', 'clients', clients, methods=['GET', 'POST'])
 app.add_url_rule('/tickets', 'tickets', tickets, methods=['GET', 'POST'])
+app.add_url_rule('/protected', 'protected', protected, methods=['GET', 'POST'])
+
+
+
 
 
 if __name__ == '__main__':

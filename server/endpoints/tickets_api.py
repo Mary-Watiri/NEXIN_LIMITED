@@ -8,13 +8,13 @@ def tickets():
         ticket_list = []
         for ticket in tickets:
             ticket_list.append({
-                'id' : ticket.id,
-                'status' : ticket.status.value,  # Convert Enum to its value
-                'priority' : ticket.priority.value,  # Convert Enum to its value
-                'deadline' : ticket.deadline,
-                'assign_to' : ticket.assign_to,
-                'client_id' : ticket.client_id,
-                'comments' : ticket.comments
+                'id': ticket.id,
+                'status': ticket.status.value,
+                'priority': ticket.priority.value,
+                'deadline': ticket.deadline,
+                'assign_to': ticket.assign_to,
+                'client_id': ticket.client_id,
+                'comments': ticket.comments
             })
         return jsonify(ticket_list)
     elif request.method == 'POST':
@@ -28,9 +28,9 @@ def tickets():
         db.session.add(ticket)
         db.session.commit()
         inserted_ticket = {
-            'id': ticket.id,  
-            'status': ticket.status.value,  
-            'priority': ticket.priority.value, 
+            'id': ticket.id,
+            'status': ticket.status.value,
+            'priority': ticket.priority.value,
             'deadline': ticket.deadline,
             'assign_to': ticket.assign_to,
             'client_id': ticket.client_id,
@@ -46,15 +46,25 @@ def tickets():
             return f"Ticket with ID {ticket_id} deleted"
         else:
             return f"Ticket with ID {ticket_id} not found", 404
-    
+
     elif request.method == 'PATCH':
         ticket_id = request.args.get('id')
         ticket = Tickets.query.get(ticket_id)
         if not ticket:
             return jsonify({'message': 'Ticket not found'}), 404
         data = request.get_json()
-        for key, value in data.items():
-            setattr(ticket, key, value)
+        assign_to = data.get('assign_to')
+        if assign_to is not None:
+            ticket.assign_to = assign_to
         db.session.commit()
-        return jsonify(ticket._dict_), 200
-    
+        updated_ticket = {
+            'id': ticket.id,
+            'status': ticket.status.value,
+            'priority': ticket.priority.value,
+            'deadline': ticket.deadline,
+            'assign_to': ticket.assign_to,
+            'client_id': ticket.client_id,
+            'comments': ticket.comments
+        }
+        return jsonify(updated_ticket), 200
+
