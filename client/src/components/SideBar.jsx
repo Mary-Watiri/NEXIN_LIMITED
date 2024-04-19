@@ -115,7 +115,7 @@ function SideBar({ThemeStyles}) {
         <Item
         icon={<AccountBoxIcon/>}
         title="Tickets"
-        to="/Item"
+        to="/TicketList"
       />
      </Box>
      <Box>
