@@ -5,7 +5,7 @@ function SearchBar({handleChange, value}) {
   return (
     <div>
        <Box class="flex">
-      <input className="text-slate-200 bg-sky-950 p-3" onChange={handleChange} value={value} placeholder="search materials"/>
+      <input className="text-teal-200 bg-orange-950 p-3" onChange={handleChange} value={value} placeholder="search tickets"/>
       <IconButton  class="text-slate-700">
         <SearchOutlinedIcon />
       </IconButton>

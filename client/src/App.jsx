@@ -3,8 +3,8 @@ import Bar from "./components/Charts/BarChart";
 import SideBar from "./components/SideBar";
 import TopNav from "./components/TopNav";
 import { Routes, Route } from "react-router-dom"
-import Pie from "./components/Charts/PieChart";
-import Line from "./components/Charts/Line";
+// import Pie from "./components/Charts/PieChart";
+// import Line from "./components/Charts/Line";
 import FAQ from "./components/FAQ";
 import Form from './components/Form';
 import TeamTable from './components/TeamTable';
@@ -17,14 +17,9 @@ function App () {
   const toggleColor=UpdateTheme() //button hook
   //create the themes
   const ThemeStyles={
-    backgroundColor:darkTheme?"#0c0a09":"rgb(240,250,250)",
-    color:darkTheme?"rgb(240,240,240)":"rgb(10,10,30)",
+    backgroundColor:darkTheme?"rgb(46, 45, 45)":"rgb(171, 163, 159)",
+    color:darkTheme?"rgb(240,240,240)":"rgb(26 46 5)",
   }
-  
-  
-  
-  
-  
   
   return (
 
@@ -35,10 +30,10 @@ function App () {
       {/* Routes */}
       <Routes>
         <Route path="/Bar" element={<Bar ThemeStyles={ThemeStyles}/>}/>
-        <Route path="/Pie" element={<Pie/>}/>
-        <Route path="/Line" element={<Line/>}/>
+        {/* <Route path="/Pie" element={<Pie/>}/>
+        <Route path="/Line" element={<Line/>}/> */}
         <Route path="/FAQ" element={<FAQ ThemeStyles={ThemeStyles}/>}/>
-        <Route path="/Team" element={<TeamTable/>}/>
+        <Route path="/admin" element={<TeamTable/>}/>
         <Route path="/Profile" element={<Form ThemeStyles={ThemeStyles} />}/>
         <Route path="/" element={<Dashboard ThemeStyles={ThemeStyles}/>}/>
         <Route path="/Calendar" element={<MyCalendar/>}/>

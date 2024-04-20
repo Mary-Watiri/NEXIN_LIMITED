@@ -2,6 +2,7 @@ import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import { Box, IconButton, Button } from '@mui/material';
 import Bar from './Charts/BarChart';
 import { Link } from 'react-router-dom';
+// import House from '../../public/House.jpeg';
 const Dashboard = ({ThemeStyles}) => {
     
   return (
@@ -164,11 +165,11 @@ const Dashboard = ({ThemeStyles}) => {
       {/* Campaign */}
       <Box class="flex justify-between overflow-hidden">
  <Box className="w-full p-3 bg-amber-950">
-        <h1 className="text-2xl font-semibold mb-2">Campaign</h1>
+        <h1 className="text-green-500 text-2xl font-semibold mb-2">Closed Tickets</h1>
         <div className="p-4 rounded-lg shadow-md">
           <DonutLargeIcon className="w-75 h-72 text-4xl text-blue-500 mb-2" />
-          <h2 className='text-blue-500'>$48,354 revenue generated</h2>
-          <h3>Include extra misc expenditures and costs</h3>
+          <h2 className='text-blue-100 text-xl'>Closed tickets for the year</h2>
+          <h3  className='text-blue-500'>Closing 32,441 tickets is a testament to our team's dedication and effectiveness. Continuing to leverage insights from these resolved issues will be crucial in maintaining high levels of customer satisfaction and operational excellence. Moving forward, sustaining this momentum will require ongoing commitment to service quality, process optimization, and proactive customer engagement.</h3>
         </div>
       </Box>
 
@@ -176,12 +177,6 @@ const Dashboard = ({ThemeStyles}) => {
       <Box className="ml-3 h-fit p-3  w-full bg-amber-950">
         <h1 className="text-xl text-center font-semibold">Tasks Chart</h1>
        <div className="w-75 h-72 -mt-8"><Bar/></div> 
-      </Box>
-      
-      <Box className="flex p-3 h-fit w-full bg-amber-950 ml-3">
-        <div className="">
-          <h1 className="text-xl text-center font-semibold">Add more</h1>
-        </div>
       </Box>
 
       </Box>
