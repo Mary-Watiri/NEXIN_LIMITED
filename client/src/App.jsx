@@ -12,6 +12,7 @@ import ContactInformation from "./components/ContactInformation";
 import Dashboard from "./components/Dashboard";
 import MyCalendar from "./components/Calendar";
 import Item from "./components/Item";
+import house from "./assets/house.jpeg";
 function App () {
   const darkTheme=UseTheme() //usetheme hook
   const toggleColor=UpdateTheme() //button hook
@@ -19,6 +20,9 @@ function App () {
   const ThemeStyles={
     backgroundColor:darkTheme?"rgb(46, 45, 45)":"rgb(171, 163, 159)",
     color:darkTheme?"rgb(240,240,240)":"rgb(26 46 5)",
+    backgroundImage:`src='house`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   }
   
   return (
