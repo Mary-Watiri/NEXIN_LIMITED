@@ -11,10 +11,11 @@ import { Link } from 'react-router-dom';
 function TopNav({toggleColor,darkTheme}) {
   const ThemeStyles={
     backgroundColor:darkTheme?"rgd(23, 5, 5)":"rgb(84, 35, 13)",
-    color:darkTheme?"rgb(13, 13, 13)":"rgb(255 255 255)"
-  }
+    color:darkTheme?"rgb(13, 13, 13)":"rgb(255 255 255)",
+  };
+  return (
+    
 
-return (
     <Box  className="flex justify-between mt-2 p-5" style={ThemeStyles} >
     {/*searchbar*/}
     <Box className="flex">

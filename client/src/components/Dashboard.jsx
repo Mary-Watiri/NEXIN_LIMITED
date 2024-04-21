@@ -1,6 +1,7 @@
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import { Box, IconButton, Button } from '@mui/material';
 import Bar from './Charts/BarChart';
+import ticketsImage from '../assets/tickets.png';
 import { Link } from 'react-router-dom';
 // import House from '../../public/House.jpeg';
 const Dashboard = ({ThemeStyles}) => {
@@ -20,7 +21,7 @@ const Dashboard = ({ThemeStyles}) => {
         <Box className="bg-amber-950 p-2  shadow-md flex items-center">
           <div className="w-4 h-8 text-blue-500 mr-2"><DonutLargeIcon /></div>
           <div>
-            <h1 className="text-2xl text-slate-300 font-semibold">12,361</h1>
+            <h1 className="text-2xl text-slate-300 font-semibold">61</h1>
             <h2 className='text-blue-500'>All Tasks</h2>
           </div>
         </Box>
@@ -29,7 +30,7 @@ const Dashboard = ({ThemeStyles}) => {
         <div className="bg-amber-950 p-4  shadow-md flex items-center">
           <div className="w-8 h-8 text-green-500 mr-4"><DonutLargeIcon /></div>
           <div>
-            <h1 className="text-2xl font-semibold text-slate-300">431,22</h1>
+            <h1 className="text-2xl font-semibold text-slate-300">21</h1>
             <h2 className='text-green-500'>Open Tasks</h2>
           </div>
         </div>
@@ -38,7 +39,7 @@ const Dashboard = ({ThemeStyles}) => {
         <div className="bg-amber-950 p-4  shadow-md flex items-center">
           <div className="w-8 h-8 text-yellow-500 mr-4"><DonutLargeIcon /></div>
           <div>
-            <h1 className="text-2xl font-semibold text-slate-300">32,441</h1>
+            <h1 className="text-2xl font-semibold text-slate-300">441</h1>
             <h2 className="text-yellow-500">Closed Tasks</h2>
           </div>
         </div>
@@ -47,18 +48,30 @@ const Dashboard = ({ThemeStyles}) => {
         <div className="bg-amber-950 p-4  shadow-md flex items-center">
           <div className="w-8 h-8 text-purple-500 mr-4"><DonutLargeIcon /></div>
           <div>
-            <h1 className="text-2xl font-semibold text-slate-300">30,440</h1>
+            <h1 className="text-2xl font-semibold text-slate-300">40</h1>
             <h2 className="text-purple-500">Tasks Due Today</h2>
           </div>
         </div>
       </Box>
     
 
-      {/* Recent Transactions */}
-      <Box class="flex w-100 justify-between">
-    <Box class="p-2 bg-amber-950 m-3 w-3/4 h-60 overflow-hidden">
+      
+      <Box class="flex w-100 justify-center ">
+    <Box class="p-2 bg-amber-950 m-3 w-4/4 h-60 overflow-hidden">
     <div className="flex  justify-between text-center"> 
-  <Link to="/Line">
+    <div className="bg-amber-950 p-4  shadow-md flex items-center">
+    <img src={ticketsImage} alt="Recent Tickets" className="mr-4" style={{ width: '200px', height: 'auto' }} />          
+    <div className="w-8 h-8 text-yellow-500 mr-4"><DonutLargeIcon /></div>
+          <div>
+            <h1 className="text-2xl font-semibold text-slate-300">61</h1>
+            <h2 className="text-yellow-500">Recent Tickets</h2>
+            <h3 className="text-green-500">Nexin LTD's ticketing system currently has a total of 61 tickets. 
+            Out of these, 21 tasks are still open and awaiting resolution. 
+            A significant portion, 41 tasks, are due today, indicating a busy schedule for the team to address these urgent matters promptly. 
+            This summary highlights the workload and the importance of efficient task management to meet today's deadlines. </h3>
+          </div>
+        </div>
+  <Link to="/Item">
 <IconButton class="text-emerald-500">
 
 
@@ -68,98 +81,7 @@ const Dashboard = ({ThemeStyles}) => {
 </div>
         
     </Box>
-    <Box class="p-5 mr-2 overflow-y-scroll h-60 w-1/3 position-fixed scroll-">
-        <div className="bg-amber-950 text-center justify-center flex h-12 align-middle">
-        <h2 class="text-slate-100 p-3  w-100">
-            Recent Transactions
-        </h2>
-        </div>
-        <div className="flex mt-2 align-middle p-4 justify-between w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Simon</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">37009103</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-        <div className="flex mt-2 align-middle p-4 justify-between w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Charity</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">39764784</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-        <div className="flex mt-2 align-middle p-4 justify-between w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Abaadir</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">3873785</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-        <div className="flex mt-2 align-middle p-4 justify-between w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Mwangi</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">3873785</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-        <div className="flex mt-2 align-middle p-4 justify-between w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Wanjiku</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">3873785</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-        <div className="flex mt-2 align-middle p-4 justify-between w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Kimwaki</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">3873785</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-        <div className="flex mt-2 align-middle justify-between p-4 w-100 bg-amber-950">
-            <div className=" p-2 align-middle">
-            <h5 className="text-green-500 font-extrabold">009ur47</h5>
-            <h6 className="text-slate-200">Muteithia</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <h6 className="text-zinc-300 text-sm">3873785</h6>
-            </div>
-            <div className="m-3 text-slate-200">
-            <Button class="bg-amber-950 text-slate-200 p-1 w-100 border-r-2">$45.90</Button>
-            </div>
-        </div>
-    </Box>
-</Box>
+</Box> 
 
 
       {/* Campaign */}
@@ -169,7 +91,7 @@ const Dashboard = ({ThemeStyles}) => {
         <div className="p-4 rounded-lg shadow-md">
           <DonutLargeIcon className="w-75 h-72 text-4xl text-blue-500 mb-2" />
           <h2 className='text-blue-100 text-xl'>Closed tickets for the year</h2>
-          <h3  className='text-blue-500'>Closing 32,441 tickets is a testament to our team's dedication and effectiveness. Continuing to leverage insights from these resolved issues will be crucial in maintaining high levels of customer satisfaction and operational excellence. Moving forward, sustaining this momentum will require ongoing commitment to service quality, process optimization, and proactive customer engagement.</h3>
+          <h3  className='text-blue-500'>Closing 441 tickets is a testament to our team's dedication and effectiveness. Continuing to leverage insights from these resolved issues will be crucial in maintaining high levels of customer satisfaction and operational excellence. Moving forward, sustaining this momentum will require ongoing commitment to service quality, process optimization, and proactive customer engagement.</h3>
         </div>
       </Box>
 
