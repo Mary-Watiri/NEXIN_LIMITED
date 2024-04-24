@@ -1,5 +1,6 @@
 from functools import wraps
 import os
+from dotenv import load_dotenv
 from flask import Flask, jsonify, make_response, redirect, request, url_for
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -16,7 +17,8 @@ app = Flask(
     static_folder='../client/dist',
     template_folder='../client/dist'
 )
-
+# Load environment variables from .env file
+load_dotenv()
 CORS(app, origins='*')  # Enable CORS with credentials support
 
 @app.before_request
