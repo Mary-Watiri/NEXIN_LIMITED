@@ -35,7 +35,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASE_URI = os.getenv("DATABASE_URI")
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI  #"sqlite:///app.db"
+app.config['SQLALCHEMY_DATABASE_URI'] =  "sqlite:///app.db" #DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 
